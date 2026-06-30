@@ -52,10 +52,10 @@ class GridStructure(BaseModel):
     rows : list[Row] 
 
 class Table(BaseModel):
-    x : float
-    y : float
-    width : float
-    height : float
+    x_min : float
+    x_max : float
+    y_min : float
+    y_max : float
     page_number : int
     confidence : float = Field(ge=0.0, le=1.0) 
     label : Literal['table', 'table-rotated']
