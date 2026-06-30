@@ -41,3 +41,21 @@ class AnalysisResponse(BaseModel):
     schedule_rows : list[ScheduleRow]
     qa_results : list[QAResult]
     summary : dict
+
+class Row(BaseModel):
+    y1 : float
+    y2 : float
+    col_pos : list[float]
+    abn_flag: Literal[0, 1] = 0
+
+class GridStructure(BaseModel):
+    rows : list[Row] 
+
+class Table(BaseModel):
+    x : float
+    y : float
+    width : float
+    height : float
+    page_number : int
+    confidence : float = Field(ge=0.0, le=1.0) 
+    label : Literal['table', 'table-rotated']
