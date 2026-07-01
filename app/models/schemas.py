@@ -46,7 +46,7 @@ class Row(BaseModel):
     y1 : float
     y2 : float
     col_pos : list[float]
-    abn_flag: Literal[0, 1] = 0
+    #abn_flag: Literal[0, 1] = 0
 
 class GridStructure(BaseModel):
     rows : list[Row] 
